@@ -1,0 +1,10 @@
+---
+# tasks file for new-role
+- name: Install helpers
+  pip:
+    name: 'file://{{ role_path }}/files/local_helpers-1.0.tar.gz'
+    extra_args: '--user'
+
+- name: Output using filter
+  debug:
+    msg: '{{ lookup("now") }}'
